@@ -1,0 +1,12 @@
+{
+  "name": "realtime_chat",
+  "adaptive_refresh_threshold": 16,
+  "literal_frequency_threshold": 0.005,
+  "min_word_occurrences": 2,
+  "min_word_length": 8,
+  "huffman_word_freq": 3,
+  "huffman_literal_freq": 2,
+  "min_compression_size": 100,
+  "enable_audit": true,
+  "parallel_workers": 4
+}

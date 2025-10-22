@@ -1,201 +1,276 @@
-Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+AURA Compression License
+(Adaptive Universal Response Audit Protocol)
+Copyright (c) 2025 Todd Hendricks
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+================================================================================
+DUAL LICENSE MODEL
+================================================================================
 
-   1. Definitions.
+This software is available under a dual-license model:
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+1. OPEN SOURCE LICENSE (for individuals, non-profits, and educational use)
+2. COMMERCIAL LICENSE (for companies with revenue)
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+================================================================================
+1. OPEN SOURCE LICENSE
+================================================================================
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+OPEN SOURCE LICENSE TERMS:
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+This license applies to:
+- Individual developers (personal use, non-commercial projects)
+- Non-profit organizations
+- Educational institutions
+- Open source projects (non-commercial)
+- Companies with annual revenue ≤$5 million (startups, small businesses)
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+If you qualify for this license, you may freely use, modify, and distribute
+this software under Apache 2.0 terms.
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+================================================================================
+2. COMMERCIAL LICENSE (Required for Public Deployments)
+================================================================================
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+COMMERCIAL LICENSE REQUIREMENT:
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+Companies MAY use AURA Compression for INTERNAL TESTING and EVALUATION without a license,
+regardless of company size or revenue.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+However, you MUST obtain a commercial license for:
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+1. PUBLIC DEPLOYMENTS (customer-facing, production use)
+2. Any use by companies with annual revenue EXCEEDING $5 MILLION in production
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+This includes:
+- Customer-facing applications (web apps, mobile apps, APIs)
+- Production services accessible by external users
+- B2B or B2C products using AURA in production
+- Growing startups (>$5M annual revenue) with public deployments
+- SMBs (small and medium businesses) with customer-facing use
+- Enterprises and large corporations with production use
+- Any entity with >$5M annual revenue deploying AURA publicly
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+INTERNAL TESTING IS PERMITTED (No License Required):
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+Companies of ANY size may use AURA for:
+✅ Internal development and testing
+✅ Proof-of-concept projects (non-production)
+✅ Performance benchmarking
+✅ Evaluation and assessment (up to 90 days)
+✅ Internal tools not accessible to external users
+✅ Staging/test environments (non-customer-facing)
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+Once you deploy to production or customers can access your service using AURA,
+you MUST obtain a commercial license
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+CONTACT FOR COMMERCIAL LICENSING:
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+Email: todd@auraprotocol.org
+Subject: Commercial License Inquiry - AURA Compression
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+Please provide:
+- Company name and size (employees, annual revenue)
+- Use case (how you plan to use AURA)
+- Expected deployment scale (users, messages/month)
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+COMMERCIAL LICENSE PRICING:
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+Pricing is negotiated based on:
+- Company size and revenue
+- Deployment scale and bandwidth savings
+- Support requirements (SLA, custom templates, etc.)
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+Typical pricing:
+- Growing businesses ($5M-$10M revenue): $25K-$50K/year
+- Mid-market ($10M-$100M revenue): $50K-$150K/year
+- Enterprise ($100M+ revenue): $150K-$500K/year
+- Negotiable based on ROI (bandwidth savings >> license cost)
 
-   END OF TERMS AND CONDITIONS
+COMMERCIAL LICENSE INCLUDES:
 
-   APPENDIX: How to apply the Apache License to your work.
+✅ Full patent indemnification (protection against patent claims)
+✅ Priority support with SLA (response time guarantees)
+✅ Custom template development (application-specific patterns)
+✅ Real-time analytics dashboard (compression performance monitoring)
+✅ Multi-tenant template management (for B2B SaaS)
+✅ Non-exclusive, perpetual license (pay once, use forever option available)
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
+ENFORCEMENT:
 
-   Copyright [yyyy] [name of copyright owner]
+Companies deploying AURA to PRODUCTION/PUBLIC use without a commercial license
+(when required) are in violation of this license and may face:
+- Legal action for license infringement
+- Patent infringement claims (AURA is patent-pending)
+- Damages calculated based on unpaid license fees + bandwidth savings
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+We actively monitor for public/production deployments and enforce licensing requirements.
 
-       http://www.apache.org/licenses/LICENSE-2.0
+NOTE: Internal testing and evaluation is ALWAYS permitted without a license,
+regardless of company size. We encourage all companies to test AURA internally
+before purchasing a license.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+================================================================================
+3. PATENT NOTICE
+================================================================================
+
+PATENT PENDING (USPTO Provisional Patent Filed)
+
+This software implements technology covered by pending patent applications:
+- Hybrid AI-Optimized Compression Protocol
+- Human-Readable Server-Side Enforcement Architecture
+- Template-Based Binary Semantic Compression
+- Compliance-First Audit Logging
+
+PATENT GRANT (for Open Source License users):
+
+If you use AURA under the Open Source License terms (individuals, non-profits,
+educational institutions), you receive a royalty-free patent license for the
+patents covering this technology.
+
+PATENT LICENSE (for Commercial License users):
+
+Commercial license includes full patent rights and indemnification.
+
+PATENT TERMINATION:
+
+If you institute patent litigation against any entity (including a cross-claim
+or counterclaim) alleging that AURA infringes your patents, your license
+(Open Source or Commercial) automatically terminates.
+
+================================================================================
+4. FREQUENTLY ASKED QUESTIONS
+================================================================================
+
+Q: I'm a solo developer building a side project. Which license do I need?
+A: Open Source License (free). Even with paying customers, as long as your
+   annual revenue stays under $5M, you can use the free license.
+
+Q: I work at a $50M company. Can I use AURA for internal testing?
+A: Yes! Any company can use AURA for internal testing, evaluation, and proof-of-concept
+   projects without a license. However, you need a commercial license for production/public deployments.
+
+Q: I work at a company with $3M annual revenue. Can I use AURA for customer-facing products?
+A: Yes! Companies with ≤$5M annual revenue can use the Open Source License (free) for
+   production deployments
+
+Q: I'm building an open source project (non-commercial). Which license?
+A: Open Source License (free), as long as your project is non-commercial.
+
+Q: We're a startup with $8M ARR. What's the license cost?
+A: Typically $25K-$50K/year. Contact us for negotiated pricing based on your
+   use case and bandwidth savings.
+
+Q: What if we just use AURA without a license?
+A: That's license infringement + potential patent infringement. We enforce
+   our licensing terms. Don't do this.
+
+Q: Can we try AURA before buying a Commercial License?
+A: Yes! All companies can use AURA for internal testing and evaluation without
+   a license. Test it in your staging environment, run benchmarks, build proofs-of-concept.
+   When you're ready to deploy to production (customer-facing), contact us for licensing.
+
+Q: Is there a self-serve option for small businesses?
+A: Not yet, but planned for 2026. For now, contact us for licensing.
+
+================================================================================
+5. DEFINITIONS
+================================================================================
+
+"Company requiring commercial license" means any legal entity (corporation, LLC,
+partnership, etc.) that has generated gross revenue >$5 million in the past 12
+months from any source (product sales, services, consulting, advertising, etc.).
+
+"Annual revenue" means gross revenue (not net profit) from all sources in the
+past 12 months.
+
+"Internal testing" means use within your organization for development, testing,
+evaluation, benchmarking, or proof-of-concept that is NOT accessible to external
+users or customers. This includes staging/test environments.
+
+"Public deployment" means any use that is accessible to external users, customers,
+or the general public, including production services, customer-facing applications,
+APIs accessible outside your organization, or B2B/B2C products.
+
+"Use" means incorporating AURA Compression into your product, service, internal
+tool, API, or any software.
+
+"Commercial use requiring license" means:
+1. Any PUBLIC DEPLOYMENT by a company with annual revenue >$5 million, OR
+2. Any PRODUCTION/CUSTOMER-FACING use by companies >$5M revenue
+
+Internal testing does NOT require a commercial license, regardless of company size.
+
+================================================================================
+6. LICENSE COMPATIBILITY
+================================================================================
+
+OPEN SOURCE PROJECTS:
+
+AURA's Apache 2.0 license (for open source users) is compatible with:
+- MIT, BSD, ISC licenses ✅
+- Apache 2.0 ✅
+- LGPL (with some restrictions) ⚠️
+- GPL v3 (AURA can be included in GPLv3 projects) ✅
+
+AURA is NOT compatible with:
+- Proprietary closed-source commercial software (requires Commercial License)
+
+COMMERCIAL PROJECTS:
+
+If you have a Commercial License, AURA can be used in any software
+(proprietary, closed-source, commercial) per your license agreement terms.
+
+================================================================================
+7. CONTACT INFORMATION
+================================================================================
+
+For Licensing Inquiries:
+Email: todd@auraprotocol.org
+Subject: Commercial License Inquiry
+
+For Technical Support (Open Source users):
+GitHub: https://github.com/yourusername/aura-compression/issues
+Email: support@auraprotocol.org
+
+For Patent Questions:
+Email: todd@auraprotocol.org
+Subject: Patent Inquiry
+
+Website: auraprotocol.org (coming soon)
+
+================================================================================
+8. MODIFICATIONS TO THIS LICENSE
+================================================================================
+
+Todd Hendricks reserves the right to update this license for future versions
+of AURA Compression. Your use of a specific version is governed by the license
+included with that version.
+
+Once you obtain a Commercial License, your rights under that license are
+perpetual (or as specified in your license agreement) and cannot be
+retroactively changed.
+
+================================================================================
+
+By using AURA Compression, you agree to these license terms.
+
+If you are a company with annual revenue >$5 million deploying AURA to PRODUCTION
+or PUBLIC use without a Commercial License, you MUST stop the public deployment
+immediately and contact us for licensing.
+
+Internal testing and evaluation is permitted for all companies without a license.
+
+Last Updated: October 22, 2025
+License Version: 1.1 (Updated: Internal testing exemption added)

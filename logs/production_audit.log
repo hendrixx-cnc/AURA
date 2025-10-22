@@ -1,0 +1,96 @@
+[2025-10-22 06:38:37.862] USER →
+  Message: What's the weather today?
+  Compression: uncompressed
+  Size: 25 → 26 bytes
+  Ratio: 0.96:1
+
+[2025-10-22 06:38:37.862] ASSISTANT ←
+  Message: I don't have access to real-time information. Please check an appropriate source
+  Compression: brotli
+  Size: 80 → 49 bytes
+  Ratio: 1.63:1
+
+[2025-10-22 06:38:37.862] USER →
+  Message: Can you help me with Python?
+  Compression: uncompressed
+  Size: 28 → 29 bytes
+  Ratio: 0.97:1
+
+[2025-10-22 06:38:37.862] ASSISTANT ←
+  Message: Yes, I can help with that. What specific topic would you like to know more about?
+  Compression: binary_semantic
+  Size: 81 → 10 bytes
+  Ratio: 8.10:1
+
+[2025-10-22 06:38:37.862] USER →
+  Message: How do I install NumPy?
+  Compression: uncompressed
+  Size: 23 → 24 bytes
+  Ratio: 0.96:1
+
+[2025-10-22 06:38:37.863] ASSISTANT ←
+  Message: To install packages, use pip: `pip install package-name`
+  Compression: brotli
+  Size: 56 → 50 bytes
+  Ratio: 1.12:1
+
+[2025-10-22 06:38:37.863] USER →
+  Message: Which framework should I use for my project?
+  Compression: uncompressed
+  Size: 44 → 45 bytes
+  Ratio: 0.98:1
+
+[2025-10-22 06:38:37.863] ASSISTANT ←
+  Message: To make the best choice, I recommend: research your options, compare features, and test before committing
+  Compression: brotli
+  Size: 105 → 71 bytes
+  Ratio: 1.48:1
+
+[2025-10-22 08:12:03.323] USER →
+  Message: What's the weather today?
+  Compression: uncompressed
+  Size: 25 → 26 bytes
+  Ratio: 0.96:1
+
+[2025-10-22 08:12:03.324] ASSISTANT ←
+  Message: I don't have access to real-time information. Please check an appropriate source
+  Compression: brotli
+  Size: 80 → 49 bytes
+  Ratio: 1.63:1
+
+[2025-10-22 08:12:03.324] USER →
+  Message: Can you help me with Python?
+  Compression: uncompressed
+  Size: 28 → 29 bytes
+  Ratio: 0.97:1
+
+[2025-10-22 08:12:03.324] ASSISTANT ←
+  Message: Yes, I can help with that. What specific topic would you like to know more about?
+  Compression: binary_semantic
+  Size: 81 → 10 bytes
+  Ratio: 8.10:1
+
+[2025-10-22 08:12:03.324] USER →
+  Message: How do I install NumPy?
+  Compression: uncompressed
+  Size: 23 → 24 bytes
+  Ratio: 0.96:1
+
+[2025-10-22 08:12:03.325] ASSISTANT ←
+  Message: To install packages, use pip: `pip install package-name`
+  Compression: brotli
+  Size: 56 → 50 bytes
+  Ratio: 1.12:1
+
+[2025-10-22 08:12:03.325] USER →
+  Message: Which framework should I use for my project?
+  Compression: uncompressed
+  Size: 44 → 45 bytes
+  Ratio: 0.98:1
+
+[2025-10-22 08:12:03.325] ASSISTANT ←
+  Message: To make the best choice, I recommend: research your options, compare features, and test before committing
+  Compression: brotli
+  Size: 105 → 71 bytes
+  Ratio: 1.48:1
+
