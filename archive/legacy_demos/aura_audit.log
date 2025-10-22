@@ -1,0 +1,48 @@
+[2025-10-22 06:37:15.736] USER →
+  Message: I don't have access to real-time weather data. Please check weather.com
+  Compression: brotli
+  Size: 71 → 49 bytes
+  Ratio: 1.45:1
+
+[2025-10-22 06:37:15.737] USER →
+  Message: The capital of France is Paris.
+  Compression: uncompressed
+  Size: 31 → 32 bytes
+  Ratio: 1.00:1
+
+[2025-10-22 06:37:15.737] USER →
+  Message: To install packages, use pip: `pip install numpy`
+  Compression: uncompressed
+  Size: 49 → 50 bytes
+  Ratio: 1.00:1
+
+[2025-10-22 06:37:15.738] USER →
+  Message: Yes, I can help with that. What specific aspect would you like to know more about?
+  Compression: binary_semantic
+  Size: 82 → 11 bytes
+  Ratio: 7.45:1
+
+[2025-10-22 06:37:15.738] USER →
+  Message: The time complexity of binary search is O(log n) because it divides the search space in half.
+  Compression: brotli
+  Size: 93 → 71 bytes
+  Ratio: 1.31:1
+
+[2025-10-22 06:37:15.738] USER →
+  Message: Common HTTP status codes include: 200, 404, 500.
+  Compression: uncompressed
+  Size: 48 → 49 bytes
+  Ratio: 1.00:1
+
+[2025-10-22 06:37:15.739] USER →
+  Message: To debug this issue, I recommend: check console, verify endpoint, test authentication
+  Compression: brotli
+  Size: 85 → 67 bytes
+  Ratio: 1.27:1
+
+[2025-10-22 06:37:15.739] USER →
+  Message: Neural networks work by adjusting weights through backpropagation.
+  Compression: brotli
+  Size: 66 → 56 bytes
+  Ratio: 1.18:1
+
