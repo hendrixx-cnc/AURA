@@ -1,0 +1,12 @@
+{
+  "name": "ai_streaming",
+  "adaptive_refresh_threshold": 32,
+  "literal_frequency_threshold": 0.003,
+  "min_word_occurrences": 2,
+  "min_word_length": 6,
+  "huffman_word_freq": 5,
+  "huffman_literal_freq": 1,
+  "min_compression_size": 200,
+  "enable_audit": true,
+  "parallel_workers": 8
+}

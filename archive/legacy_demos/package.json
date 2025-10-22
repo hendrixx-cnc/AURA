@@ -1,0 +1,16 @@
+{
+  "name": "aura-workspace",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "npm test --workspace=aura-cli"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.0",
+    "typescript": "^5.5.4"
+  }
+}

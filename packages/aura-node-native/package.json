@@ -1,0 +1,71 @@
+{
+  "name": "@aura-protocol/native",
+  "version": "0.1.0",
+  "description": "AURA Protocol - Native Node.js bindings for high-performance compression",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "aura-native",
+    "triples": {
+      "additional": [
+        "aarch64-apple-darwin",
+        "aarch64-unknown-linux-gnu",
+        "aarch64-unknown-linux-musl",
+        "aarch64-pc-windows-msvc",
+        "x86_64-unknown-linux-musl"
+      ]
+    }
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release",
+    "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "node test.js",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "keywords": [
+    "compression",
+    "ai",
+    "audit",
+    "native",
+    "napi",
+    "rust",
+    "performance",
+    "template",
+    "semantic"
+  ],
+  "author": "Todd Hendricks <todd@auraprotocol.org>",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/aura-compression.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/aura-compression/issues"
+  },
+  "homepage": "https://auraprotocol.org",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.17.0"
+  },
+  "optionalDependencies": {
+    "@aura-protocol/native-darwin-x64": "0.1.0",
+    "@aura-protocol/native-darwin-arm64": "0.1.0",
+    "@aura-protocol/native-linux-x64-gnu": "0.1.0",
+    "@aura-protocol/native-linux-x64-musl": "0.1.0",
+    "@aura-protocol/native-linux-arm64-gnu": "0.1.0",
+    "@aura-protocol/native-linux-arm64-musl": "0.1.0",
+    "@aura-protocol/native-win32-x64-msvc": "0.1.0",
+    "@aura-protocol/native-win32-arm64-msvc": "0.1.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">= 16"
+  }
+}
