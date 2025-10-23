@@ -1,0 +1,1 @@
+/workspaces/AURA/AURA-main/packages/aura-node-native/target/release/libaura_node_native.so: /workspaces/AURA/AURA-main/packages/aura-node-native/build.rs /workspaces/AURA/AURA-main/packages/aura-node-native/src/lib.rs

@@ -37,6 +37,7 @@ impl From<u8> for CompressionMethod {
 // ============================================================================
 
 #[napi(object)]
+#[derive(Clone)]
 pub struct Template {
   pub id: u8,
   pub pattern: String,
@@ -274,12 +275,13 @@ impl AuraCompressor {
 
     let mut data = vec![CompressionMethod::Uncompressed as u8];
     data.extend_from_slice(original_bytes);
+    let compressed_size = data.len() as u32;
 
     Ok(CompressionResult {
       data: data.into(),
       method: CompressionMethod::Uncompressed,
       original_size: original_size as u32,
-      compressed_size: data.len() as u32,
+      compressed_size,
       ratio: 1.0,
       template_id: None,
     })
