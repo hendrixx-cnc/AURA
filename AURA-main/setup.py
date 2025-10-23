@@ -21,11 +21,11 @@ setup(
     description="AI-Optimized Hybrid Compression Protocol for Real-Time Communication",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/aura-compression",
+    url="https://github.com/hendrixx-cnc/AURA",
     project_urls={
-        "Bug Tracker": "https://github.com/yourusername/aura-compression/issues",
-        "Documentation": "https://github.com/yourusername/aura-compression/blob/main/docs/technical/DEVELOPER_GUIDE.md",
-        "Source Code": "https://github.com/yourusername/aura-compression",
+        "Bug Tracker": "https://github.com/hendrixx-cnc/AURA/issues",
+        "Documentation": "https://github.com/hendrixx-cnc/AURA/blob/main/docs/technical/DEVELOPER_GUIDE.md",
+        "Source Code": "https://github.com/hendrixx-cnc/AURA",
     },
     packages=find_packages(exclude=["tests", "archive", "docs", "examples"]),
     classifiers=[

@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/aura-compression.git"
+    "url": "git+https://github.com/hendrixx-cnc/AURA.git"
   },
   "keywords": [
     "compression",
@@ -39,10 +39,11 @@
   "author": "Todd Hendricks <todd@auraprotocol.org>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/yourusername/aura-compression/issues"
+    "url": "https://github.com/hendrixx-cnc/AURA/issues"
   },
-  "homepage": "https://github.com/yourusername/aura-compression#readme",
+  "homepage": "https://github.com/hendrixx-cnc/AURA#readme",
   "dependencies": {
+    "node-addon-api": "^8.0.0",
     "node-gyp-build": "^4.8.0"
   },
   "devDependencies": {
