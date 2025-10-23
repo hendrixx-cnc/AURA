@@ -3,7 +3,9 @@
 
 **Inventor**: Todd Hendricks
 **Filing Date**: October 22, 2025
+**Status**: ✅ **FILED** - Provisional Patent Application Submitted
 **Title**: System and Method for Auditable Multi-Layer Compression with Metadata Side-Channel and Adaptive Conversation Acceleration for AI Communications
+**USPTO Application Number**: [Pending - will be assigned within 1-2 business days]
 
 ---
 

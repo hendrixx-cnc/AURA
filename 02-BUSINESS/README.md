@@ -43,7 +43,9 @@ Unlike traditional AI systems with constant latency, AURA conversations become p
 - **Claims**: 35 (11 independent, 24 dependent)
 - **Value**: $20M-$55M estimated
 - **Grant Probability**: 90-95%
-- **Status**: Ready for provisional filing
+- **Status**: ✅ **FILED** - Provisional Patent Application Submitted (Oct 22, 2025)
+- **Priority Date**: October 22, 2025
+- **12-Month Window**: Must file non-provisional by October 22, 2026
 
 ---
 
