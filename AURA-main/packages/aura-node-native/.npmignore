@@ -1,0 +1,26 @@
+# Source files
+src/
+target/
+Cargo.toml
+Cargo.lock
+build.rs
+
+# Development files
+*.log
+.DS_Store
+node_modules/
+
+# Build artifacts (only publish pre-built binaries)
+*.node
+
+# CI/CD
+.github/
+.travis.yml
+.gitlab-ci.yml
+
+# Documentation source
+docs/
+
+# Tests
+test.js
+benches/

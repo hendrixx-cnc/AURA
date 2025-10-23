@@ -1,6 +1,0 @@
-This is a test file for AURA compression.
-It contains some repetitive text to see how well the pattern detection works.
-The cat sat on the mat. The dog sat on the log. The cat and the dog are friends.
-Repetition is key for good compression. Repetition is key for good compression.
-Let's see how the AURA format handles this.
-The cat sat on the mat again.

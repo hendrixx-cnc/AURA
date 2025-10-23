@@ -1,0 +1,3 @@
+TITLE OF THE INVENTION
+
+System and Method for Auditable Multi-Layer Compression with Metadata Side-Channel for AI Communications

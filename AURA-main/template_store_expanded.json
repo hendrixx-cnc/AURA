@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-23T10:00:00Z",
+  "templates": {
+    "149": {
+      "pattern": "Request {0} completed in {1}ms",
+      "slot_count": 2,
+      "category": "api_response",
+      "frequency": 100,
+      "compression_advantage": 2.5
+    },
+    "150": {
+      "pattern": "User {0} authenticated successfully",
+      "slot_count": 1,
+      "category": "api_response",
+      "frequency": 95,
+      "compression_advantage": 2.3
+    },
+    "151": {
+      "pattern": "Database query returned {0} results",
+      "slot_count": 1,
+      "category": "api_response",
+      "frequency": 80,
+      "compression_advantage": 2.4
+    },
+    "152": {
+      "pattern": "Cache hit for key: {0}",
+      "slot_count": 1,
+      "category": "api_response",
+      "frequency": 90,
+      "compression_advantage": 2.2
+    },
+    "153": {
+      "pattern": "API rate limit: {0}/{1} requests",
+      "slot_count": 2,
+      "category": "api_response",
+      "frequency": 70,
+      "compression_advantage": 2.1
+    },
+    "154": {
+      "pattern": "Service {0} is {1}",
+      "slot_count": 2,
+      "category": "system_status",
+      "frequency": 85,
+      "compression_advantage": 2.3
+    },
+    "155": {
+      "pattern": "Deployment {0} started at __TIMESTAMP_0__",
+      "slot_count": 1,
+      "category": "system_status",
+      "frequency": 75,
+      "compression_advantage": 3.5
+    },
+    "156": {
+      "pattern": "Health check passed: {0}",
+      "slot_count": 1,
+      "category": "system_status",
+      "frequency": 80,
+      "compression_advantage": 2.4
+    },
+    "157": {
+      "pattern": "Error {0}: {1}",
+      "slot_count": 2,
+      "category": "error",
+      "frequency": 95,
+      "compression_advantage": 2.0
+    },
+    "158": {
+      "pattern": "Retry {0}/{1} failed: {2}",
+      "slot_count": 3,
+      "category": "error",
+      "frequency": 60,
+      "compression_advantage": 2.3
+    },
+    "159": {
+      "pattern": "Timeout after {0}ms for {1}",
+      "slot_count": 2,
+      "category": "error",
+      "frequency": 65,
+      "compression_advantage": 2.2
+    },
+    "160": {
+      "pattern": "Processing request...",
+      "slot_count": 0,
+      "category": "status",
+      "frequency": 100,
+      "compression_advantage": 3.0
+    },
+    "161": {
+      "pattern": "Authentication successful",
+      "slot_count": 0,
+      "category": "status",
+      "frequency": 95,
+      "compression_advantage": 3.2
+    },
+    "162": {
+      "pattern": "Database connection established",
+      "slot_count": 0,
+      "category": "status",
+      "frequency": 80,
+      "compression_advantage": 3.5
+    },
+    "163": {
+      "pattern": "I understand your concern.",
+      "slot_count": 0,
+      "category": "ai_response",
+      "frequency": 90,
+      "compression_advantage": 3.0
+    },
+    "164": {
+      "pattern": "Service status: {0}",
+      "slot_count": 1,
+      "category": "status",
+      "frequency": 85,
+      "compression_advantage": 2.5
+    },
+    "165": {
+      "pattern": "Task completed successfully",
+      "slot_count": 0,
+      "category": "status",
+      "frequency": 90,
+      "compression_advantage": 3.1
+    },
+    "166": {
+      "pattern": "Invalid input: {0}",
+      "slot_count": 1,
+      "category": "error",
+      "frequency": 75,
+      "compression_advantage": 2.3
+    },
+    "167": {
+      "pattern": "Session expired - please log in again",
+      "slot_count": 0,
+      "category": "auth",
+      "frequency": 70,
+      "compression_advantage": 3.8
+    },
+    "168": {
+      "pattern": "Data synchronized with {0}",
+      "slot_count": 1,
+      "category": "status",
+      "frequency": 60,
+      "compression_advantage": 2.4
+    },
+    "169": {
+      "pattern": "Backup completed: {0} transferred",
+      "slot_count": 1,
+      "category": "status",
+      "frequency": 55,
+      "compression_advantage": 2.5
+    },
+    "170": {
+      "pattern": "Request {0} completed in {1}",
+      "slot_count": 2,
+      "category": "api_response",
+      "frequency": 85,
+      "compression_advantage": 2.3
+    },
+    "171": {
+      "pattern": "Request completed in __TIME_0_MS__",
+      "slot_count": 0,
+      "category": "api_response",
+      "frequency": 80,
+      "compression_advantage": 3.2
+    },
+    "172": {
+      "pattern": "Connection from __IPV4_0__ established",
+      "slot_count": 0,
+      "category": "network",
+      "frequency": 70,
+      "compression_advantage": 3.0
+    },
+    "173": {
+      "pattern": "Processing file {0} (__SIZE_0_GB__)",
+      "slot_count": 1,
+      "category": "status",
+      "frequency": 65,
+      "compression_advantage": 2.8
+    },
+    "174": {
+      "pattern": "Request __UUID_0__ completed in __TIME_0_MS__",
+      "slot_count": 0,
+      "category": "api_response",
+      "frequency": 75,
+      "compression_advantage": 3.5
+    },
+    "175": {
+      "pattern": "Error __HEX_0__ at offset __HEX_1__",
+      "slot_count": 0,
+      "category": "error",
+      "frequency": 60,
+      "compression_advantage": 3.0
+    }
+  }
+}

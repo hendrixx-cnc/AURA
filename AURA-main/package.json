@@ -1,0 +1,70 @@
+{
+  "name": "@aura/compression",
+  "version": "1.0.0",
+  "description": "AI-Optimized Hybrid Compression Protocol for Real-Time Communication",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*",
+    "native/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/build-native.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "prepublishOnly": "npm run build && npm test",
+    "install": "node-gyp-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/aura-compression.git"
+  },
+  "keywords": [
+    "compression",
+    "ai",
+    "chat",
+    "websocket",
+    "auralite",
+    "semantic-compression",
+    "template-compression",
+    "bandwidth-optimization",
+    "gdpr",
+    "hipaa",
+    "compliance"
+  ],
+  "author": "Todd Hendricks <todd@auraprotocol.org>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/yourusername/aura-compression/issues"
+  },
+  "homepage": "https://github.com/yourusername/aura-compression#readme",
+  "dependencies": {
+    "node-gyp-build": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "node-gyp": "^10.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}
