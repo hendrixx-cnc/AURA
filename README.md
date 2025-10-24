@@ -1,14 +1,13 @@
-# AURA: Adaptive Universal Response Audit Protocol
+AURA: Adaptive Universal Response Audit Protocol
 
-**The AI That Gets Faster the More You Chat™**
+
 
 This repository contains the AURA compression and auditing system for AI communications.
-
-## 📁 Repository Structure
+Repository Structure
 
 The main project code and documentation are located in the [`AURA-main/`](./AURA-main/) directory.
 
-## 🚀 Quick Start
+Quick Start
 
 Navigate to [`AURA-main/`](./AURA-main/) for:
 - Complete documentation
@@ -16,8 +15,6 @@ Navigate to [`AURA-main/`](./AURA-main/) for:
 - Code examples
 - Patent information
 
-## 📜 License
+License
 
 Apache License 2.0 - See [AURA-main/LICENSE](./AURA-main/LICENSE) for details.
-
-**AURA™ - The AI That Gets Faster the More You Chat™**
