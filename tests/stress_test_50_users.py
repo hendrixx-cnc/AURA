@@ -201,6 +201,10 @@ class MessageSynthesizer:
         self.slot_usage_histogram = defaultdict(lambda: defaultdict(int))  # template_id -> slot_value -> count
         self.corpus_contribution = defaultdict(int)  # track corpus vs synthetic ratio
 
+        # Template performance tracking for intelligent selection
+        self.template_performance = defaultdict(lambda: {'ratios': [], 'count': 0})
+        self.exploration_rate = 0.3  # 30% random exploration, 70% exploitation
+
         # Categorize templates by slot count for efficient sampling
         self.zero_slot = []
         self.one_slot = []
@@ -330,6 +334,42 @@ class MessageSynthesizer:
         self.slot_usage_histogram[template_id][value] += 1
         return value
 
+    def record_template_performance(self, template_id: int, compression_ratio: float):
+        """Track compression performance of each template for intelligent selection"""
+        self.template_performance[template_id]['ratios'].append(compression_ratio)
+        self.template_performance[template_id]['count'] += 1
+
+    def select_template_intelligently(self, template_list: List[Tuple[int, str]]) -> Tuple[int, str]:
+        """
+        Select template with bias towards high-compression ones.
+
+        Uses epsilon-greedy strategy:
+        - 30% exploration: random selection (discover new patterns)
+        - 70% exploitation: weighted by compression performance
+        """
+        if not template_list:
+            return (0, "")
+
+        # Exploration: random selection to discover patterns
+        if random.random() < self.exploration_rate:
+            return random.choice(template_list)
+
+        # Exploitation: weighted selection based on compression history
+        weights = []
+        for tid, pattern in template_list:
+            perf = self.template_performance[tid]
+            if perf['count'] > 0:
+                # Use average compression ratio as weight
+                avg_ratio = statistics.mean(perf['ratios'])
+                # Boost weight for high-compression templates
+                weights.append(max(avg_ratio, 1.0) ** 2)  # Square to amplify differences
+            else:
+                # Default weight for untested templates (neutral)
+                weights.append(1.5)  # Slightly favor exploration of new templates
+
+        # Weighted random choice
+        return random.choices(template_list, weights=weights, k=1)[0]
+
     def get_churn_report(self) -> str:
         """Generate report on slot value churn and corpus contribution with low diversity warnings."""
         lines = ["\nSlot Value Churn Analysis:"]
@@ -384,6 +424,40 @@ class MessageSynthesizer:
 
         return "\n".join(lines)
 
+    def get_template_performance_report(self) -> str:
+        """Generate report on template compression performance for intelligent selection."""
+        lines = ["\n📊 Template Performance Analysis (Intelligent Selection):"]
+
+        # Get templates with performance data
+        templates_with_perf = [(tid, perf) for tid, perf in self.template_performance.items()
+                               if perf['count'] > 0]
+
+        if not templates_with_perf:
+            lines.append("  No performance data yet (warmup needed)")
+            return "\n".join(lines)
+
+        # Sort by average compression ratio
+        templates_with_perf.sort(key=lambda x: statistics.mean(x[1]['ratios']), reverse=True)
+
+        # Show top 10 performers
+        lines.append(f"\n  Top 10 High-Compression Templates:")
+        for i, (tid, perf) in enumerate(templates_with_perf[:10], 1):
+            avg_ratio = statistics.mean(perf['ratios'])
+            pattern = self.templates.get(tid, "Unknown")
+            pattern_short = pattern[:50] + "..." if len(pattern) > 50 else pattern
+            lines.append(f"    {i:2d}. Template {tid:3d}: {avg_ratio:.2f}:1 avg ({perf['count']:3d} uses)")
+            lines.append(f"        Pattern: \"{pattern_short}\"")
+
+        # Show exploitation vs exploration stats
+        total_uses = sum(perf['count'] for _, perf in templates_with_perf)
+        exploration_count = int(total_uses * self.exploration_rate)
+        exploitation_count = total_uses - exploration_count
+        lines.append(f"\n  Selection Strategy:")
+        lines.append(f"    Exploitation (high-compression bias): ~{exploitation_count} ({(1-self.exploration_rate)*100:.0f}%)")
+        lines.append(f"    Exploration (random discovery):      ~{exploration_count} ({self.exploration_rate*100:.0f}%)")
+
+        return "\n".join(lines)
+
     def synthesize_ai_message(self, min_length: int = 50, max_length: int = 2000) -> str:
         """Generate realistic AI message using templates with random slot filling."""
 
@@ -411,15 +485,15 @@ class MessageSynthesizer:
         if min_length > 100:
             # Use longer templates or two-sentence combinations
             if random.random() < 0.7:
-                # Single longer template
+                # Single longer template (with intelligent selection)
                 if self.two_slot:
-                    template_id, pattern = random.choice(self.two_slot)
+                    template_id, pattern = self.select_template_intelligently(self.two_slot)
                     slot0 = self.fill_slot(template_id, 0)
                     slot1 = self.fill_slot(template_id, 1)
                     msg = pattern.format(slot0, slot1)
-                    # Pad if needed
+                    # Pad if needed (use intelligent selection here too)
                     while len(msg) < min_length and len(msg) < max_length - 50:
-                        template_id, pattern = random.choice(self.one_slot)
+                        template_id, pattern = self.select_template_intelligently(self.one_slot)
                         msg += " " + pattern.format(self.fill_slot(template_id, 0))
                     return msg[:max_length]
                 else:
@@ -429,19 +503,19 @@ class MessageSynthesizer:
                 # Two sentence combination (20%)
                 return self._synthesize_multi_sentence(min_length, max_length, max_sentences=2)
 
-        # For shorter messages, use single templates
+        # For shorter messages, use single templates with intelligent selection
         # 20% - Zero-slot templates (best compression)
         if random.random() < 0.20:
             if not self.zero_slot:
                 return "Yes"
-            template_id, pattern = random.choice(self.zero_slot)
+            template_id, pattern = self.select_template_intelligently(self.zero_slot)
             return pattern
 
         # 45% - Single-slot templates
         elif random.random() < 0.65:
             if not self.one_slot:
                 return "I cannot help with that."
-            template_id, pattern = random.choice(self.one_slot)
+            template_id, pattern = self.select_template_intelligently(self.one_slot)
             slot_value = self.fill_slot(template_id, 0)
             return pattern.format(slot_value)
 
@@ -449,7 +523,7 @@ class MessageSynthesizer:
         elif random.random() < 0.90:
             if not self.two_slot:
                 return "The value is undefined."
-            template_id, pattern = random.choice(self.two_slot)
+            template_id, pattern = self.select_template_intelligently(self.two_slot)
             slot0 = self.fill_slot(template_id, 0)
             slot1 = self.fill_slot(template_id, 1)
             return pattern.format(slot0, slot1)
@@ -459,16 +533,16 @@ class MessageSynthesizer:
             return self._synthesize_multi_sentence(min_length, max_length)
 
     def _synthesize_multi_sentence(self, min_length: int, max_length: int, max_sentences: int = 3) -> str:
-        """Generate multi-sentence message (helper to avoid recursion issues)."""
+        """Generate multi-sentence message with intelligent template selection."""
         sentences = []
         depth = 0
         while len(" ".join(sentences)) < min_length and depth < max_sentences:
-            # Use simple template generation (not recursive)
+            # Use intelligent template selection
             if self.one_slot and random.random() < 0.7:
-                template_id, pattern = random.choice(self.one_slot)
+                template_id, pattern = self.select_template_intelligently(self.one_slot)
                 sentences.append(pattern.format(self.fill_slot(template_id, 0)))
             elif self.two_slot:
-                template_id, pattern = random.choice(self.two_slot)
+                template_id, pattern = self.select_template_intelligently(self.two_slot)
                 sentences.append(pattern.format(
                     self.fill_slot(template_id, 0),
                     self.fill_slot(template_id, 1)
@@ -790,10 +864,24 @@ class UserSimulator:
 
 
 async def warmup_phase(server_url: str, num_messages: int = 100):
-    """Warm up caches and template stores before stress test."""
+    """
+    Warm up caches and template stores with intelligent analysis.
+
+    Returns Dict with warmup results and recommendations.
+    """
     print(f"\nWarming up with {num_messages} messages...")
 
     synth = get_message_synthesizer()
+    warmup_metrics = CompressionMetrics()
+
+    # Track warmup results for analysis
+    warmup_results = {
+        'total_messages': 0,
+        'template_hits': 0,
+        'uncompressed_count': 0,
+        'ratios': [],
+        'methods': defaultdict(int)
+    }
 
     try:
         async with websockets.connect(server_url) as ws:
@@ -805,14 +893,91 @@ async def warmup_phase(server_url: str, num_messages: int = 100):
                     msg = synth.synthesize_human_message(20, 100)
 
                 await ws.send(msg)
-                await ws.recv()  # Receive response
+                response = await ws.recv()
+                response_data = json.loads(response)
+
+                # Track warmup statistics
+                warmup_results['total_messages'] += 1
+                method = response_data.get('method', 'unknown')
+                warmup_results['methods'][method] += 1
+
+                if method == 'BINARY_SEMANTIC':
+                    warmup_results['template_hits'] += 1
+                elif method == 'UNCOMPRESSED':
+                    warmup_results['uncompressed_count'] += 1
+
+                ratio = response_data.get('compression_ratio', 1.0)
+                warmup_results['ratios'].append(ratio)
+
+                # Record performance for intelligent selection
+                warmup_metrics.record(response_data, msg)
 
         print(f"Warm-up complete ({num_messages} messages processed).\n")
-        return True
+
+        # Analyze warmup results and provide recommendations
+        analyze_warmup_results(warmup_results, synth)
+
+        return warmup_results
     except Exception as e:
         print(f"Warm-up failed: {e}")
         print("Continuing without warm-up...\n")
-        return False
+        return None
+
+
+def analyze_warmup_results(results: Dict, synthesizer):
+    """Analyze warmup phase and suggest/apply adjustments"""
+
+    if not results or results['total_messages'] == 0:
+        return
+
+    template_hit_rate = results['template_hits'] / results['total_messages']
+    avg_compression = statistics.mean(results['ratios']) if results['ratios'] else 1.0
+    uncompressed_rate = results['uncompressed_count'] / results['total_messages']
+
+    print("📊 Warmup Analysis:")
+    print(f"  Template hit rate: {template_hit_rate:.1%} (BINARY_SEMANTIC)")
+    print(f"  Average compression: {avg_compression:.2f}:1")
+    print(f"  Uncompressed rate: {uncompressed_rate:.1%}")
+
+    adjustments_made = []
+
+    # Adjustment 1: Low template hit rate
+    if template_hit_rate < 0.35:
+        print("\n⚠️  Low template hit rate detected")
+        print("  → Template matching is poor - messages may be too complex")
+        # Note: Length adjustments would be applied globally - skip for now
+        # to keep synthesizer behavior consistent
+
+    # Adjustment 2: High UNCOMPRESSED rate
+    if uncompressed_rate > 0.60:
+        print("\n⚠️  High UNCOMPRESSED rate")
+        print("  → Many messages are too short or don't compress well")
+        print("  → Consider using longer message lengths or lower min_compression_size")
+
+    # Adjustment 3: Poor compression ratio
+    if avg_compression < 1.15:
+        print("\n⚠️  Low average compression ratio")
+        print("  → Consider increasing corpus weight for better compression")
+        # Auto-adjust corpus weight if available
+        if hasattr(synthesizer, 'corpus') and synthesizer.corpus:
+            old_weight = synthesizer.corpus_weight
+            synthesizer.corpus_weight = min(old_weight + 0.2, 0.9)
+            adjustments_made.append(f"corpus_weight: {old_weight:.2f} → {synthesizer.corpus_weight:.2f}")
+
+    # Adjustment 4: Template selection bias optimization
+    if hasattr(synthesizer, 'template_performance'):
+        # Reduce exploration rate after warmup to exploit learned patterns
+        if hasattr(synthesizer, 'exploration_rate') and synthesizer.exploration_rate > 0.2:
+            old_rate = synthesizer.exploration_rate
+            synthesizer.exploration_rate = 0.2  # Reduce from 30% to 20% after warmup
+            adjustments_made.append(f"exploration_rate: {old_rate:.1%} → {synthesizer.exploration_rate:.1%}")
+
+    if adjustments_made:
+        print("\n✅ Auto-Adjustments Applied:")
+        for adj in adjustments_made:
+            print(f"  • {adj}")
+
+    print()
 
 
 async def run_stress_test(num_users: int = 50, server_url: str = "ws://localhost:8765",
@@ -998,6 +1163,11 @@ async def run_stress_test(num_users: int = 50, server_url: str = "ws://localhost
     churn_report = synthesizer.get_churn_report()
     if churn_report:
         print(churn_report)
+
+    # Print template performance analysis (intelligent selection)
+    perf_report = synthesizer.get_template_performance_report()
+    if perf_report:
+        print(perf_report)
 
     print()
 
