@@ -10,6 +10,9 @@
 |----------|---------|----------|
 | [Technical Reference](#technical-reference) | Complete API and architecture reference | Developers |
 | [Deployment Guide](#deployment-guide) | Production deployment instructions | DevOps/SRE |
+| [Improvements Guide](#improvements-guide) | Performance optimization roadmap | Developers/Engineers |
+| [Features Documentation](#features-documentation) | Advanced feature implementations | Developers |
+| [Packages Documentation](#packages-documentation) | SDK and package installation guides | Developers |
 | [Session Summary](#session-summary) | Recent development session results | Management/Technical |
 | [Patent Documentation](#patent-documentation) | Patent claims and test results | Legal/Technical |
 
@@ -147,6 +150,87 @@
 - Installation (Section 2)
 - Configuration (Section 3)
 - Monitoring & Observability (Section 5)
+
+---
+
+## Improvements Guide
+
+**Directory:** `docs/technical/improvements/`
+
+### Documents
+
+1. **[IMPROVEMENTS_SUMMARY.md](technical/improvements/IMPROVEMENTS_SUMMARY.md)**
+   - Comprehensive stress test improvements
+   - Realistic message distribution fixes
+   - Corpus weighting implementation
+   - Template concatenation reduction
+
+2. **[NEXT_IMPROVEMENTS_GUIDE.md](technical/improvements/NEXT_IMPROVEMENTS_GUIDE.md)**
+   - High-priority roadmap (1.09:1 → 1.5-1.8:1 compression)
+   - Template selection bias (+15-20% improvement)
+   - Dynamic template discovery (+10-15% improvement)
+   - Conversation context awareness (+5-10% improvement)
+
+3. **[FINAL_IMPROVEMENTS_SUMMARY.md](technical/improvements/FINAL_IMPROVEMENTS_SUMMARY.md)**
+   - Complete implementation summary
+   - Performance impact analysis
+   - Production deployment recommendations
+
+4. **[COMPREHENSIVE_IMPLEMENTATION_SUMMARY.md](technical/improvements/COMPREHENSIVE_IMPLEMENTATION_SUMMARY.md)**
+   - Full technical implementation details
+   - Code examples and integration guides
+   - Testing and validation procedures
+
+**Target Audience:** Software engineers, performance engineers, technical architects
+
+**Key Sections for Quick Start:**
+- Next Improvements Guide (Priority roadmap)
+- Improvements Summary (Current implementations)
+
+---
+
+## Features Documentation
+
+**Directory:** `docs/technical/features/`
+
+### Documents
+
+1. **[TEMPLATE_SELECTION_BIAS_FEATURE.md](technical/features/TEMPLATE_SELECTION_BIAS_FEATURE.md)**
+   - Intelligent template selection algorithm
+   - Performance-based weighting system
+   - Exploration vs exploitation balancing
+   - Implementation code examples
+
+2. **[EXTENDED_METADATA_IMPROVEMENT.md](technical/features/EXTENDED_METADATA_IMPROVEMENT.md)**
+   - Advanced metadata processing techniques
+   - Fast-path optimization strategies
+   - Security screening enhancements
+   - Conversation acceleration features
+
+**Target Audience:** Software engineers, algorithm developers, system architects
+
+**Key Sections for Quick Start:**
+- Template Selection Bias (Core algorithm)
+- Extended Metadata (Advanced features)
+
+---
+
+## Packages Documentation
+
+**Directory:** `docs/packages/`
+
+### Documents
+
+1. **[PACKAGE_README.md](packages/PACKAGE_README.md)**
+   - Package installation and setup
+   - SDK integration guides
+   - API usage examples
+   - Deployment configurations
+
+**Target Audience:** Developers, DevOps engineers, system integrators
+
+**Key Sections for Quick Start:**
+- Package README (Installation and setup)
 
 ---
 
