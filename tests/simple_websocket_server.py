@@ -19,12 +19,13 @@ from aura_compression.compressor import ProductionHybridCompressor
 
 
 class SimpleWebSocketServer:
-    def __init__(self, host='localhost', port=8765):
+    def __init__(self, host='localhost', port=8765, min_compression_size=35):
         self.host = host
         self.port = port
         self.compressor = ProductionHybridCompressor(
             enable_aura=True,
-            enable_audit_logging=False
+            enable_audit_logging=False,
+            min_compression_size=min_compression_size  # Lowered from 50 to 35 for better compression
         )
         self.connections = 0
         self.messages_processed = 0
@@ -59,6 +60,10 @@ class SimpleWebSocketServer:
                         'message_count': self.messages_processed,
                         'metadata': metadata
                     }
+
+                    # Add template_id to top level for easy access (full feedback loop)
+                    if metadata and 'template_id' in metadata:
+                        response['template_id'] = metadata['template_id']
 
                     # Send response as JSON
                     await websocket.send(json.dumps(response))

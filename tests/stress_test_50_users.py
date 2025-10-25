@@ -797,6 +797,14 @@ class UserSimulator:
                     # Record metrics
                     self.metrics.record(response_data, message)
 
+                    # Record template performance for intelligent selection (full feedback loop)
+                    if 'template_id' in response_data and response_data['method'] == 'BINARY_SEMANTIC':
+                        synth = get_message_synthesizer()
+                        synth.record_template_performance(
+                            response_data['template_id'],
+                            response_data.get('compression_ratio', 1.0)
+                        )
+
                     end_time = time.time()
                     latency_ms = (end_time - start_time) * 1000
 
@@ -911,6 +919,13 @@ async def warmup_phase(server_url: str, num_messages: int = 100):
 
                 # Record performance for intelligent selection
                 warmup_metrics.record(response_data, msg)
+
+                # Record template performance during warmup (full feedback loop)
+                if 'template_id' in response_data and method == 'BINARY_SEMANTIC':
+                    synth.record_template_performance(
+                        response_data['template_id'],
+                        ratio
+                    )
 
         print(f"Warm-up complete ({num_messages} messages processed).\n")
 
