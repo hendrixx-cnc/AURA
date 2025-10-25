@@ -1,15 +1,20 @@
-# 03-TECHNICAL: Technical Documentation
+# Technical Documentation
 
-This directory contains technical documentation for developers and engineers.
+This directory contains technical documentation for developers and engineers working with AURA compression.
 
 ---
 
 ## Quick Links
 
-- **[DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md)** - How to build and integrate AURA
-- **[EXPERIMENTAL_BRIO.md](EXPERIMENTAL_BRIO.md)** - BRIO codec documentation
-- **[AUTOMATIC_TEMPLATE_DISCOVERY.md](AUTOMATIC_TEMPLATE_DISCOVERY.md)** - Template discovery system
-- **[TEST_RESULTS.md](TEST_RESULTS.md)** - Benchmark and test results
+- **[Improvements](improvements/)** - Performance optimization roadmap and implementations
+  - [Improvements Summary](improvements/IMPROVEMENTS_SUMMARY.md) - Current optimizations
+  - [Next Improvements Guide](improvements/NEXT_IMPROVEMENTS_GUIDE.md) - Future roadmap
+  - [Comprehensive Implementation](improvements/COMPREHENSIVE_IMPLEMENTATION_SUMMARY.md) - Technical details
+- **[Features](features/)** - Advanced feature implementations
+  - [Template Selection Bias](features/TEMPLATE_SELECTION_BIAS_FEATURE.md) - Intelligent selection
+  - [Extended Metadata](features/EXTENDED_METADATA_IMPROVEMENT.md) - Advanced processing
+- **[Deployment Guide](../../DEPLOYMENT_GUIDE.md)** - Production setup and configuration
+- **[Documentation Index](../../DOCUMENTATION_INDEX.md)** - Complete documentation overview
 
 ---
 
