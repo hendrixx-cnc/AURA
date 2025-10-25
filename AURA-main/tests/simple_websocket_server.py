@@ -43,15 +43,21 @@ class SimpleWebSocketServer:
                 try:
                     compressed, method, metadata = self.compressor.compress(message)
 
+                    # Calculate sizes properly in bytes
+                    original_bytes = len(message.encode('utf-8'))
+                    compressed_bytes = len(compressed)
+                    actual_ratio = original_bytes / compressed_bytes if compressed_bytes > 0 else 1.0
+
                     # Create response
                     response = {
                         'status': 'ok',
                         'original_message': message,
-                        'compressed_size': len(compressed),
-                        'original_size': len(message),
-                        'compression_ratio': metadata['ratio'],
+                        'compressed_size': compressed_bytes,
+                        'original_size': original_bytes,
+                        'compression_ratio': actual_ratio,
                         'method': method.name,
-                        'message_count': self.messages_processed
+                        'message_count': self.messages_processed,
+                        'metadata': metadata
                     }
 
                     # Send response as JSON
