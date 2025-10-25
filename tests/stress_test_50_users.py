@@ -982,6 +982,7 @@ async def run_stress_test(num_users: int = 50, server_url: str = "ws://localhost
         print(f"  ✗ POOR: {overall_ratio:.2f}:1 compression (minimal benefit)")
 
     # Bandwidth savings assessment
+    bandwidth_saved = 0
     if total_original_size > 0:
         bandwidth_saved = (1 - total_compressed_size/total_original_size)*100
         print(f"  Bandwidth saved: {bandwidth_saved:.1f}% ({total_original_size - total_compressed_size:,} bytes)")
